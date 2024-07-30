@@ -1,0 +1,139 @@
+,question,context,question_emb,context_emb,cossim
+0,What is contract farming?,"Contract Farming
+
+Contents
+What is contract farming
+Contract farming business models
+Advantages
+Challenges
+Policy support
+Agricultural produce suitable for CF
+Key minimum requirements for appropriate contract schemes
+Related resources
+What is contract farming
+Contract farming can be defined as agricultural production carried out according to an agreement between a buyer and farmers, which establishes conditions for the production and marketing of a farm product or products. Typically, the farmer agrees to provide agreed quantities of a specific agricultural product. These should meet the quality standards of the purchaser and be supplied at the time determined by the purchaser. In turn, the buyer commits to purchase the product and, in some cases, to support production through, for example, the supply of farm inputs, land preparation and the provision of technical advice.","[ 0.24154423 -5.3744626   0.24951267 ... -0.36365643 -1.35817111
+  1.12821221]","[-0.3374534  -4.03338575 -1.13558328 ... -0.84917897 -2.46173191
+ -1.91963375]",0.690283804130614
+1,What are the key characteristics of the informal contract farming business model?,"Contract farming business models
+Informal model - This model is the most transient and speculative of all contract farming models, with a risk of default by both the promoter and the farmer” (van Gent, n.d., p.5). However, this depends on the situation: interdependence of contract parties or long-term trustful relationships may reduce the risk of opportunistic behaviour. Special features of this CF model are:
+Small firms conclude simple, informal seasonal production contracts with smallholders.
+The success often depends on the availability and quality of external extension services.
+Embedded services, if at all provided, are limited to the delivery of basic inputs, occasionally on credit; advice is usually limited to grading and quality control.
+Typical products: requiring minimal processing/ packaging, vertical coordination; e.g. fresh fruit/ vegetables for local markets, sometimes also staple crops.","[ 0.96222568 -2.58937097  0.65853912 ... -0.14440285 -0.09047148
+  2.78074956]","[ 0.83721018 -2.15161657 -0.1182301  ... -0.79236865 -1.16199017
+ -1.87240982]",0.6386853681739175
+2,What are the special characteristics of the intermediary model in contract farming?,"Typical products: requiring minimal processing/ packaging, vertical coordination; e.g. fresh fruit/ vegetables for local markets, sometimes also staple crops.
+Intermediary model -  In this model, the buyer subcontracts an intermediary (collector, aggregator or farmer organisation) who formally or informally contracts farmers (combination of the centralised/ informal models). Special characteristics of this CF model are:
+The intermediary provides embedded services (usu- ally passing through services provided by buyers against service charges) and purchases the crop.
+This model can work, if well-designed and if incentive-structures are adequate and control mechanisms are in place.","[ 0.85579747 -2.18809342  0.97109509 ... -0.40733907 -0.48832226
+  2.58491516]","[ 0.27274311 -1.84684098 -0.72028655 ... -1.42703331 -0.62772912
+ -3.12846279]",0.5959218700187789
+3,Describe the special features of the multipartite model.,"This model can work, if well-designed and if incentive-structures are adequate and control mechanisms are in place.
+This model can bear disadvantages for vertical coordination and for providing incentives to farmers (buyers may lose control of production processes, quality assurance and regularity of supplies; farmers may not benefit from technology transfer; there is also a risk of price distortion and reduced incomes for farmers).
+Multipartite model - This model can develop from the centralised or nucleus estate models, e.g. following the privatisation of para- statals. It involves various organisations such as govern- mental statutory bodies alongside private companies and sometimes financial institutions. Special features:
+This model may feature as joint ventures of parastatals/ community companies with domestic/ foreign investors for processing.
+The vertical coordination depends on the discretion of the firm. Due attention has to be paid to possible political interferences.","[-3.08752847 -2.54228902  4.44213152 ... -0.87013817 -0.77086651
+ -0.81278658]","[ 0.18688373 -2.62602258 -3.05591011 ...  0.97740364 -0.31875256
+ -1.82634199]",0.5140444512509872
+4,What are the key aspects of the centralized model in contract farming?,"The vertical coordination depends on the discretion of the firm. Due attention has to be paid to possible political interferences.
+This model may also feature as farm-firm arrangement complemented by agreements with 3rd party service providers (e.g. extension, training, credits, inputs, logistics).
+Separate organisations (e.g. cooperatives) may organise farmers and provide embedded services (e.g. credits, extension, marketing, sometimes also processing).
+This model may involve equity share schemes for producers.
+Centralized model - In this model, the buyers’ involvement may vary from minimal input provision (e.g. specific varieties) to control of most production aspects (e.g. from land preparation to harvesting). This is the most common CF model, which can be characterised as follows:
+The buyer sources products from and provides services to large numbers of small, medium or large farmers.
+The relation/ coordination between farmers and contractor is strictly vertically organised.","[ 0.44181639 -3.11977935  1.09258199 ... -0.59622139 -0.19904499
+  2.87367702]","[-0.11292825 -2.27269363 -1.62776816 ... -0.06676449 -0.75514102
+ -1.77580523]",0.546986457331591
+5,How are the production and harvesting processes and qualities controlled?,"The buyer sources products from and provides services to large numbers of small, medium or large farmers.
+The relation/ coordination between farmers and contractor is strictly vertically organised.
+The quantities (quota), qualities and delivery conditions are determined at the beginning of the season.
+The production and harvesting processes and qualities are tightly controlled, sometimes directly implemented by the buyer’s staff.
+Typical products: large volumes of uniform quality usually for processing; e.g. sugar cane, tobacco, tea, coffee, cotton, tree crops, vegetables, dairy, poultry.
+Nucleus estate model -  In this model, the buyer sources both from own estates/ plantations and from contracted farmers. The estate system involves significant investments by the buyer into land, machines, staff and management. This CF model can be characterised as follows:","[ 2.17927909 -2.94969726  1.00112748 ...  1.73596466 -1.31910932
+  2.47191477]","[ 2.13365459 -0.5086357  -3.69434166 ... -0.83621389 -0.81735682
+  1.36363935]",0.6308810519032347
+6,What are the typical products and advantages of contract farming?,"The nucleus estate usually guarantees supplies to assure cost-efficient utilisation of installed processing capacities and to satisfy firm sales obligations respectively.
+In some cases, the nucleus estate is used for research, breeding or piloting and demonstration purposes and/ or as collection point.
+The farmers are at times called ‘satellite farmers’ illustrating their link to the nucleus farm. This model was in the past often used for state owned farms that re-allocated land to former workers. It is nowadays also used by the private sector as one type of CF. This model is often referred to as “outgrower model”.
+Typical products: perennials
+Advantages
+Contract farming is looking towards the benefits both for the farm-producers as well as to the agro-processing firms. Producer/farmer","[ 0.23680192 -3.2451458   0.9746297  ... -0.02255221 -1.18055129
+  1.97269976]","[ 1.78515375  0.1644492   0.23943132 ...  1.88236392 -0.90152705
+ -0.28757346]",0.11448686015659104
+7,What are the key benefits of contract farming for small farmers?,"Makes small scale farming competitive - small farmers can access technology, credit, marketing channels and information while lowering transaction costs
+Assured market for their produce at their doorsteps, reducing marketing and transaction costs
+It reduces the risk of production, price and marketing costs.
+Contract farming can open up new markets which would otherwise be unavailable to small farmers.
+It also ensures higher production of better quality, financial support in cash and /or kind and technical guidance to the farmers.
+In case of agri-processing level, it ensures consistent supply of agricultural produce with quality, at right time and lesser cost.
+Agri-based firms","[-0.55025417 -3.62613273  3.19078493 ...  1.37534153 -1.42606592
+  1.98262358]","[ 2.07834196  2.7962842   0.39393216 ...  1.88789594 -0.04542408
+ -0.43041846]",0.09448554964973521
+8,What is a key element of contract farming arrangements?,"Optimally utilize their installed capacity, infrastructure and manpower, and respond to food safety and quality concerns of the consumers.
+Make direct private investment in agricultural activities.
+The price fixation is done by the negotiation between the producers and firms.
+The farmers enter into contract production with an assured price under term and conditions.
+Challenges
+Contract farming arrangements are often criticized for being biased in favor of firms or large farmers, while exploiting the poor bargaining power of small farmers.
+Problems faced by growers like undue quality cut on produce by firms, delayed deliveries at the factory, delayed payments, low price and pest attack on the contract crop which raised the cost of production.","[-0.25103122 -2.19791508  0.4602648  ...  1.64804697 -1.40274012
+  0.928617  ]","[ 2.02017331 -4.75490999 -0.00588247 ...  0.65736175 -1.06052399
+ -2.51118326]",0.49541956079821625
+9,What are the key issues with contract farming in India?,"Contracting agreements are often verbal or informal in nature, and even written contracts often do not provide the legal protection in India that may be observed in other countries . Lack of enforceability of contractual provisions can result in breach of contracts by either party.
+Single Buyer – Multiple Sellers (Monopsony) .
+Adverse gender effects - Women have less access to contract farming than men.
+Policy support","[-0.70076483 -3.62378216  2.14798999 ... -0.54266173 -1.55297256
+  1.15035951]","[ 4.13705301 -6.12305403 -1.24876845 ... -0.31892478  1.44087398
+ -2.19570637]",0.298697777395754
+10,Which States have amended their Agricultural Produce Marketing Regulation (APMR) Acts to provide for contract farming?,"Agricultural marketing is regulated by the States’ Agricultural Produce Marketing Regulation (APMR) Acts. In order to regulate and develop practice of contract farming, Government has been actively advocating to the States/ Union Territories (UTs) to reform their agri marketing laws to provide a system of registration of contract farming sponsors, recording of their agreements and proper dispute settlement mechanism for orderly promotion of contract farming in the country. So far, 21 States (Andhra Pradesh, Arunachal Pradesh, Assam, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Maharashtra, Madhya Pradesh, Mizoram, Nagaland, Odisha, Punjab (separate Act), Rajasthan, Sikkim, Telangana, Tripura and Uttarakhand) have amended their Agricultural Produce Marketing Regulation (APMR) Acts to provide for contract farming and of them, only 13 States (Andhra Pradesh, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Maharashtra, Madhya","[ 0.13921818 -5.26510668  1.96268141 ...  1.196594   -0.3818427
+  0.05165226]","[-3.99316287 -1.73504627 -2.91124487 ...  1.20961404  0.6955514
+ -0.82790434]",0.33822960789512146
+11,Which states in India have notified the rules to implement the Agricultural Produce Market Regulation (APMR) Act?,"Regulation (APMR) Acts to provide for contract farming and of them, only 13 States (Andhra Pradesh, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Maharashtra, Madhya Pradesh, Odisha, Rajasthan and Telangana) have notified the rules to implement the provision.","[ 1.8446362  -2.65908027  1.93038011 ...  1.51584017 -0.4308891
+ -1.75395775]","[-1.33504486e+00 -4.73561859e+00 -1.00618804e+00 ... -1.20628230e-01
+  2.32560071e-03 -3.50013256e+00]",0.6030270316509718
+12,What is the refinance package for contract farming arrangements developed by NABARD aimed at?,"NABARD’s Initiatives in contact farming
+
+NABARD developed a special refinance package for contract farming arrangements (within and outside AEZs) aimed at promoting increased production of commercial crops and creation of marketing avenues for the farmers. The various initiatives undertaken by NABARD in this direction are:","[ 0.14352964 -3.06262517  3.64098573 ...  1.83285463 -0.70604283
+  0.98396635]","[ 0.8539077  -1.74474394 -1.37191927 ... -0.67379606 -1.87597859
+ -1.73047328]",0.5652942791839974
+13,What are the key points of the Special Refinance package for financing farmers for contract farming in AEZs?,"Financial Interventions
+Special Refinance package for financing farmers for contract farming in AEZs
+100% refinance to disbursements made by CBs, SCBs, RRBs and select SCARDBs (having net NPA less than 5%)
+Term facility for repayments (3 years)
+Fixation of higher scale of finance for crops under contract farming.
+Extension of refinance scheme for financing farmers for contract farming in AEZs to contract farming outside AEZs besides coverage of medicinal and aromatic plants.
+Extension of Refinance scheme for contract farming under Automatic Refinance Facility.
+Agricultural produce suitable for CF
+The various agricultural produce are suitable for practices under contract farming like tomato pulp, organic dyes, poultry, pulpwood, mushrooms, dairy processing, edible oils, exotic vegetables, baby corn cultivation, basmati rice, medicinal plants, potato for making chips and wafers, onions, mandarin oranges, durum wheat, flowers and orchids, etc.","[ 0.80673236 -4.01733255  3.35101581 ...  0.94494504 -0.52922696
+  0.96601701]","[ 0.73503661 -1.25068605  0.9844166  ... -0.57803208 -2.44570017
+ -2.32627583]",0.49579947749026365
+14,What are the key considerations for contract farming projects?,"not result in farmers’ overspecialisation in certain crops to the detriment of building resilience and contributing to local food security;
+promote sustainable farming practices and not promote reliance on chemicals or expensive seeds, or lead to excessive debts;
+lead to higher incomes for farmers than they would otherwise earn, and compared to alternative models
+substantially include women farmers and promote their rights;
+promote the land rights of farmers;
+apply free, prior and informed consent of those affected in terms of project design and implementation.
+In relation to contractual terms, the project should:
+be negotiated transparently and fairly among the parties, providing adequate information at all times on the financial aspects of the project and the risks and likely impacts;
+consider alternative contract farming models;","[-0.253346   -3.04711604  0.55376047 ... -0.1992747  -1.27777433
+  1.17751503]","[ 0.46006715 -4.27654076  0.92127109 ... -1.40595162 -0.54657429
+ -3.09657311]",0.5148473070344419
+15,What are the key principles that should be included in written contracts between companies and out-growers in contract farming models?,"consider alternative contract farming models;
+be regulated by a written contract spelling out the details and obligations of both the company  and the out-growers, and which must be written in a clear and understandable way with out-growers given sufficient time to review it;
+be transparent about how the price is determined, the duration of the project and how production inputs and other services are to be supplied and used by farmers;
+build in a clause for the renegotiation of the contract at agreed intervals, and specify the sharing of production and market risks among the parties;
+track and communicate performance to affected stakeholders to build accountability at the operational level;
+prevent unfair practices in buyer-farmer relations, and not prohibit or discourage farmers from associating with other farmers to compare contractual clauses or to address concerns or problems;
+have clear mechanisms for settling disputes.
+The government should:","[-0.24901944 -3.12125945  2.25267839 ...  0.14698789 -2.04727125
+  3.32569313]","[ 1.30118394 -2.97992134 -0.26073211 ... -1.99136245 -0.89535356
+ -1.61955118]",0.5020945399041046
+16,What role should the government play in contract farming disputes?,"have clear mechanisms for settling disputes.
+The government should:
+act as a third party, or mediator, between the parties and not be a mouthpiece for the company sponsor;
+have appropriate legislation to ensure that farmers’ rights can be enforced.
+Related resources
+An analytical toolkit for support to Contract farming
+Legal guide on Contract farming
+Contract farming and out-grower schemes - Appropriate development models to tackle poverty and hunger?","[-2.33370709 -4.55147982  1.19638419 ... -0.36153826 -1.62208712
+  0.44069764]","[-2.19051027 -2.23356605  0.09930427 ... -0.58775842 -0.9185279
+ -2.27370024]",0.648366471797165

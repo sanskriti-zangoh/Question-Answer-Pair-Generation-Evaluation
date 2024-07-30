@@ -1,0 +1,29 @@
+[
+    [
+        {
+            "question": "What are the objectives of the given paragraph?",
+            "answer": "The objectives of the given paragraph are to optimally utilize installed capacity, infrastructure, and manpower, respond to food safety and quality concerns of consumers, and make direct private investment in agricultural activities.",
+            "context": "Optimally utilize their installed capacity, infrastructure and manpower, and respond to food safety and quality concerns of the consumers.\nMake direct private investment in agricultural activities.\nThe price fixation is done by the negotiation between the producers and firms.\nThe farmers enter into contract production with an assured price under term and conditions.\nChallenges\nContract farming arrangements are often criticized for being biased in favor of firms or large farmers, while exploiting the poor bargaining power of small farmers.\nProblems faced by growers like undue quality cut on produce by firms, delayed deliveries at the factory, delayed payments, low price and pest attack on the contract crop which raised the cost of production."
+        },
+        {
+            "question": "How is the price fixed in the given paragraph?",
+            "answer": "The price fixation is done by negotiation between the producers and firms.",
+            "context": "Optimally utilize their installed capacity, infrastructure and manpower, and respond to food safety and quality concerns of the consumers.\nMake direct private investment in agricultural activities.\nThe price fixation is done by the negotiation between the producers and firms.\nThe farmers enter into contract production with an assured price under term and conditions.\nChallenges\nContract farming arrangements are often criticized for being biased in favor of firms or large farmers, while exploiting the poor bargaining power of small farmers.\nProblems faced by growers like undue quality cut on produce by firms, delayed deliveries at the factory, delayed payments, low price and pest attack on the contract crop which raised the cost of production."
+        },
+        {
+            "question": "What is the key information provided in the paragraph about contract production?",
+            "answer": "The farmers enter into contract production with an assured price under terms and conditions.",
+            "context": "Optimally utilize their installed capacity, infrastructure and manpower, and respond to food safety and quality concerns of the consumers.\nMake direct private investment in agricultural activities.\nThe price fixation is done by the negotiation between the producers and firms.\nThe farmers enter into contract production with an assured price under term and conditions.\nChallenges\nContract farming arrangements are often criticized for being biased in favor of firms or large farmers, while exploiting the poor bargaining power of small farmers.\nProblems faced by growers like undue quality cut on produce by firms, delayed deliveries at the factory, delayed payments, low price and pest attack on the contract crop which raised the cost of production."
+        },
+        {
+            "question": "What are the challenges associated with contract farming arrangements?",
+            "answer": "Contract farming arrangements are often criticized for being biased in favor of firms or large farmers, while exploiting the poor bargaining power of small farmers.",
+            "context": "Optimally utilize their installed capacity, infrastructure and manpower, and respond to food safety and quality concerns of the consumers.\nMake direct private investment in agricultural activities.\nThe price fixation is done by the negotiation between the producers and firms.\nThe farmers enter into contract production with an assured price under term and conditions.\nChallenges\nContract farming arrangements are often criticized for being biased in favor of firms or large farmers, while exploiting the poor bargaining power of small farmers.\nProblems faced by growers like undue quality cut on produce by firms, delayed deliveries at the factory, delayed payments, low price and pest attack on the contract crop which raised the cost of production."
+        },
+        {
+            "question": "What are the problems faced by growers in contract farming?",
+            "answer": "The problems faced by growers include undue quality cuts on produce by firms, delayed deliveries at the factory, delayed payments, low prices, and pest attacks on the contract crop which raise the cost of production.",
+            "context": "Optimally utilize their installed capacity, infrastructure and manpower, and respond to food safety and quality concerns of the consumers.\nMake direct private investment in agricultural activities.\nThe price fixation is done by the negotiation between the producers and firms.\nThe farmers enter into contract production with an assured price under term and conditions.\nChallenges\nContract farming arrangements are often criticized for being biased in favor of firms or large farmers, while exploiting the poor bargaining power of small farmers.\nProblems faced by growers like undue quality cut on produce by firms, delayed deliveries at the factory, delayed payments, low price and pest attack on the contract crop which raised the cost of production."
+        }
+    ]
+]
