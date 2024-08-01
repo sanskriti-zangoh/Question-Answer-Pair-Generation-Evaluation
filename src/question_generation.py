@@ -1,10 +1,11 @@
-from depends.model import llm_llama3
+from depends.model import llm_gemini
 from depends.document_loader import load_web, load_text, load_pdf, format_docs
 from depends.normal_chains import get_chain_1
 from depends.prompt import get_que_prompt_parser_from_chunks
 from depends.chunking import get_text_splitter
 from depends.others import save_to_json_file
 from schemas.question import QuestionChunk
+from langchain_core.exceptions import OutputParserException
 
 
 documents = load_text("src/data/farming_market.txt")
@@ -17,11 +18,28 @@ print("N_CHUNKS:", len(docs))
 prompt, parser = get_que_prompt_parser_from_chunks()
 print("STATUS: prompt and parser recieved")
 
-llm_chain = get_chain_1(llm=llm_llama3, prompt=prompt, parser=parser)
+llm_chain = get_chain_1(llm=llm_gemini, prompt=prompt, parser=parser)
 print("STATUS: llm chain created")
 
 for i, doc in enumerate(docs):
-    response = llm_chain.invoke({"document_chunk": format_docs([doc]), "number_of_questions": 5})
-    print(f"STATUS: response recieved for chunk {i} of {len(docs)}")
-    new_data = QuestionChunk(questions=response, chunk=doc)
-    save_to_json_file(response, dir="src/result/test2", filename=f"{i}.json")
+    try: 
+        response = llm_chain.invoke({"document_chunk": format_docs([doc]), "number_of_questions": 5})
+        print(f"STATUS: response received for chunk {i} of {len(docs)}")
+    except OutputParserException: 
+        print("ERROR: Not proper response format")
+        continue
+
+    try:
+        que_list = response['question_list']
+    except KeyError:
+        print("ERROR: Not proper response format")
+        continue
+
+    for que in que_list:
+        try:
+            que['question_context'] = doc.page_content
+        except KeyError:
+            print("ERROR: Not proper response format")
+            continue
+
+        save_to_json_file(que, dir="src/result/test10", filename=f"que_context.json")

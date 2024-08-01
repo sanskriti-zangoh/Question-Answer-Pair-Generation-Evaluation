@@ -1,25 +1,39 @@
-from langchain_chroma import Chroma
+from langchain_milvus import Milvus
+from pymilvus import Milvus as PyMilvus
 from langchain_ollama.embeddings import OllamaEmbeddings
 from typing import List, Any, Optional, Dict
 from langchain_core.documents import Document
 
-vectordb_chroma = Chroma(persist_directory="db", embedding_function=OllamaEmbeddings(model="llama3"))
+embeddings = OllamaEmbeddings(model="llama3")
 
-def store_documents_chroma(chroma_db: Chroma, documents: List[Document]) -> None:
-    chroma_db.add_documents(documents)
+def collection_exists(collection_name: str) -> bool:
+    # Initialize Milvus client
+    milvus_client = PyMilvus(host="192.168.50.71", port="19532")
+    # List all collections
+    collections = milvus_client.list_collections()
+    return collection_name in collections
 
-def load_documents_chroma(chroma_db: Chroma, ids: Optional[List[str]] = None) -> Dict[str, Any]:
-    """
-    Return
-        A dict with the keys "ids", "embeddings", "metadatas", "documents".
-    """
-    return chroma_db.get(ids=ids)
+def get_collection(collection_name: str) -> Milvus:
+    # Initialize Milvus client
+    return Milvus(
+        collection_name=collection_name,
+        embedding_function=embeddings,
+        connection_args={"host": "192.168.50.71", "port": "19532"},
+    )
 
-def delete_documents_chroma(chroma_db: Chroma, ids: Optional[List[str]] = None) -> None:
-    chroma_db.delete(ids)
+def create_collection_from_documents(documents: List[Document], collection_name: str) -> Milvus:
+    if collection_exists(collection_name):
+        print(f"Collection '{collection_name}' already exists.")
+        return get_collection(collection_name)
+    else:
+        return Milvus.from_documents(
+            documents=documents, 
+            embedding=embeddings, 
+            collection_name=collection_name,
+            connection_args={"host": "192.168.50.71", "port": "19532"},
+        )
 
-def get_vector_db_from_documents(documents: List[Document]) -> Chroma:
-    return Chroma.from_documents(documents, embedding=OllamaEmbeddings(model="llama3"))
-
-def vector_db_cleanup(chroma_db: Chroma) -> None:
-    chroma_db.delete_collection()
+def delete_collection(collection_name: str) -> None:
+    milvus_client = PyMilvus()
+    milvus_client.drop_collection(collection_name)
+    print(f"DELETE: Collection '{collection_name}' deleted.")

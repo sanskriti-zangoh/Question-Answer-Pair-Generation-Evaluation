@@ -6,7 +6,7 @@ class Question(BaseModel):
     question: str
 
 class QuestionList(BaseModel):
-    questions: List[Question]
+    question_list: List[Question]
 
 class QuestionChunk(BaseModel):
     questions: QuestionList

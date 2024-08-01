@@ -1,6 +1,7 @@
 import json
 from typing import Dict, Optional, Generator, Tuple, List
 import os
+import pandas as pd
 
 def save_to_json_file(data: Dict, dir: str = "src/result", filename: str = "test.json") -> None:
     os.makedirs(dir, exist_ok=True)
@@ -41,6 +42,19 @@ def yield_from_ques_json(dir: str) -> Generator[Tuple[str, List[str]], None, Non
             except (json.JSONDecodeError, KeyError, TypeError) as e:
                 print(f"Error processing file {file_path}: {e}")
 
+def yield_from_ques_json_one(dir: str, filename: str = 'que_context.json') -> Generator[Tuple[str, List[str]], None, None]:
+    file_path = os.path.join(dir, filename)
+    try:
+        with open(file_path, 'r') as f:
+            data = json.load(f)
+            for entry in data:
+                if entry: 
+                    yield entry
+                else:
+                    print(f"Skipping empty or malformed entry in file: {file_path}")
+    except (json.JSONDecodeError, KeyError, TypeError) as e:
+        print(f"Error processing file {file_path}: {e}")
+
 def yield_from_data_json(dir: str) -> Generator[Tuple[str, List[str]], None, None]:
     filename = 'combined_data.json'
     file_path = os.path.join(dir, filename)
@@ -65,3 +79,10 @@ def yield_from_data_evaluation_json(dir: str, filename: str = 'test2.json') -> G
                     yield entry
     except (json.JSONDecodeError, KeyError, TypeError) as e:
         print(f"Error processing file {file_path}: {e}")
+
+def json_to_df(dir: str, filename: str = "que_context.json") -> pd.DataFrame:
+    filepath = os.path.join(dir, filename)
+    with open(filepath, 'r') as file:
+        data = json.load(file)
+    df = pd.DataFrame(data)
+    return df

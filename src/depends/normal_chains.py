@@ -15,3 +15,6 @@ default_prompt = PromptTemplate(
 def get_chain_1(llm: BaseLLM = llm_llama3, prompt: PromptTemplate = default_prompt, parser: Union[StrOutputParser, JsonOutputParser, ListOutputParser] = default_parser):
     return prompt | llm | parser
 
+def get_chain_without_parser(llm: BaseLLM = llm_llama3, prompt: PromptTemplate = default_prompt):
+    return prompt | llm
+

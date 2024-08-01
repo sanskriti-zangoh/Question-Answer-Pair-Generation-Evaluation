@@ -5,17 +5,14 @@ import json
 import os
 
 
-def get_question_length_histogram(dir: str = "result/test5", filename: str = 'qna_context.json'):
-    # Load the data from the JSON file
-    filepath = os.path.join(dir, filename)
-    with open(filepath, 'r') as file:
-        data = json.load(file)
+def get_question_length_histogram(dir: str = "result/test5", filename: str = 'qna_context_embeddings.csv', plot_filename: str = 'length_histogram.png'):
 
-    # Convert the data to a pandas DataFrame
-    df = pd.DataFrame(data)
+    # Load to pandas Datafram
+    df = pd.read_csv(os.path.join(dir, "qna_context_embeddings.csv"))
 
     # Extract the question lengths
     questions = df["question"].to_list()
+    df["question_length"] = df["question"].apply(lambda x: len(x))
     question_len = pd.DataFrame([len(q) for q in questions], columns=["length"])
 
     # Plot the histogram of question lengths
@@ -23,5 +20,5 @@ def get_question_length_histogram(dir: str = "result/test5", filename: str = 'qn
     plt.title("Histogram of Question Lengths")
     plt.xlabel("Question Length")
     plt.ylabel("Frequency")
-    plt.savefig(os.path.join(dir, "length_histogram.png"))
+    plt.savefig(os.path.join(dir, plot_filename))
     plt.show()
