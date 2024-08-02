@@ -1,13 +1,13 @@
-from langchain.prompts import PromptTemplate
-from depends.model import llm_anton_llama2
+from depends.model import llm_anton_local_llama3
 
-# Step 1: Define the PromptTemplate
-template = "Write a short story about a {animal} who {action}."
-prompt_template = PromptTemplate(template=template)
+chat_completion = llm_anton_local_llama3.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": "What is a contract farming? Explain in detail",
+        }
+    ],
+    model="llama3",
+)
 
-# Step 2: Format the Prompt
-formatted_prompt = prompt_template.format(animal="cat", action="finds a magical item")
-
-# Step 3: Generate Responses
-response = llm_anton_llama2.generate([formatted_prompt])
-print(response)
+print(chat_completion.choices[0].message.content)

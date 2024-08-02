@@ -1,6 +1,7 @@
 from langchain_ollama.llms import OllamaLLM
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_openai import OpenAI
+from openai import OpenAI as OpenAIClient
 
 from dotenv import find_dotenv, load_dotenv
 import os
@@ -23,8 +24,13 @@ llm_anton_llama2 = OpenAI(
     model="TheBloke/Llama-2-7B-Chat-AWQ",
 )
 
-llm_anton_local_llama2 = OpenAI(
-    api_key=os.getenv("ANTON_MODEL_API_KEY"),
-    base_url=os.getenv("ANTON_OLLAMA2_URL"),
-    model="TheBloke/Llama-2-7B-Chat-AWQ",
+llm_anton_local_llama3 = OpenAIClient(
+    api_key="ollama",
+    base_url=os.getenv("ANTON_LOCAL_OLLAMA3_URL"),
 )
+
+# llm_anton_local_llama3 = OpenAI(
+#     api_key="ollama",
+#     base_url=os.getenv("ANTON_LOCAL_OLLAMA3_URL"),
+#     model="llama3",
+# )

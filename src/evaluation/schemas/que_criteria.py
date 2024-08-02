@@ -16,3 +16,11 @@ class QuestionFluency(BaseModel):
 class QuestionCriteria(BaseModel):
     fluency: QuestionFluency = Field(description="Fluency is a metric which rates a given question on a scale of 1 to 5 to assess its fluency and coherence.")
 
+
+question_criteria = {
+    "question_fluency": {
+        "description": "Fluency is a metric which rates a given question on a scale of 1 to 5 to assess its fluency and coherence.",
+        "json_schema": QuestionFluency
+    }
+}
+

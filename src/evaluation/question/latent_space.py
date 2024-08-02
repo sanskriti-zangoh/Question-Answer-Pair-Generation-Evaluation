@@ -8,10 +8,11 @@ from sklearn.manifold import TSNE
 import numpy as np
 import seaborn as sns
 
-def get_latent_space(dir: str = "result/test5", filename: str = 'qna_context_embeddings.csv', plot_filename: str = 'latent_space_plot.png'):
+def get_latent_space(dir: str = "result/test5", filename: str = 'qna_context_embeddings.csv', plot_filename: str = 'que_latent_space_plot.png'):
     # Load the data from the JSON file
-    embedded_queries = pd.read_csv(os.path.join(dir, "qna_context_embeddings.csv"))
-    question_embeddings = embedded_queries['question_embeddings'].to_list()
+    df = pd.read_csv(os.path.join(dir, "qna_context_embeddings.csv"))
+    question_embeddings = df['question_embeddings'].apply(lambda x: np.fromstring(x.strip('[]'), sep=',')).values.tolist()
+    # question_embeddings = embedded_queries['question_embeddings'].to_list()
     # PCA on embeddings to reduce to 10-dim
     pca = PCA(n_components=10)
     question_embeddings_reduced = pca.fit_transform(question_embeddings)

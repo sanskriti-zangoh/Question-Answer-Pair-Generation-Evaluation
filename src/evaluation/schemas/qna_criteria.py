@@ -23,4 +23,16 @@ class GlobalRelevancy(BaseModel):
 
 class QnACriteria(BaseModel):
     relevancy: UserRelevancy = Field(description="Relevance metric is to measure the informativeness of a generated Q&A pair from the perspective of a user. The metric rates from 1 to 5, with 1 being a question that would be asked by the target user and 5 a question that would not, given the context. This metric ensures that the generated content is relevant and accurate to the target audience, considering all provided information.")
-    global_relevancy: GlobalRelevancy = Field(description="Global Relevance: To measure the informativeness of a generated Q&A pair from the perspective of a user without considering any context. This rates from 1 to 5, with 1 being a question that would be asked by the target user and 5 a question that would not. This metric ensures that the generated content is relevant and accurate to the target audience.")
+    global_relevancy: GlobalRelevancy = Field(description="Global Relevance metric is to measure the informativeness of a generated Q&A pair from the perspective of a user without considering any context. This rates from 1 to 5, with 1 being a question that would be asked by the target user and 5 a question that would not. This metric ensures that the generated content is relevant and accurate to the target audience.")
+
+
+question_answer_criteria = {
+    "user_relevancy": {
+        "description": "Relevance metric is to measure the informativeness of a generated Q&A pair from the perspective of a user. The metric rates from 1 to 5, with 1 being a question that would be asked by the target user and 5 a question that would not, given the context. This metric ensures that the generated content is relevant and accurate to the target audience, considering all provided information.",
+        "json_schema": UserRelevancy
+    },
+    "global_relevancy": {
+        "description": "Global Relevance metric is to measure the informativeness of a generated Q&A pair from the perspective of a user without considering any context. This rates from 1 to 5, with 1 being a question that would be asked by the target user and 5 a question that would not. This metric ensures that the generated content is relevant and accurate to the target audience.",
+        "json_schema": GlobalRelevancy
+    }
+}
