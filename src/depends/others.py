@@ -2,6 +2,7 @@ import json
 from typing import Dict, Optional, Generator, Tuple, List
 import os
 import pandas as pd
+import csv
 
 def save_to_json_file(data: Dict, dir: str = "src/result", filename: str = "test.json") -> None:
     os.makedirs(dir, exist_ok=True)
@@ -86,3 +87,19 @@ def json_to_df(dir: str, filename: str = "que_context.json") -> pd.DataFrame:
         data = json.load(file)
     df = pd.DataFrame(data)
     return df
+
+def save_to_csv_file(data: Dict, dir: str = "src/result", filename: str = "test.csv") -> None:
+    os.makedirs(dir, exist_ok=True)
+    file_path = f"{dir}/{filename}"
+    
+    with open(file_path, 'a', newline='') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=data.keys())
+        if not os.path.isfile(file_path):
+            writer.writeheader()
+        writer.writerow(data)
+
+def list_of_dict_to_df_save(dir: str, filename: str = "que_context.json", data: List[Dict] = []) -> pd.DataFrame:
+    os.makedirs(dir, exist_ok=True)
+    filepath = os.path.join(dir, filename)
+    df = pd.DataFrame(data)
+    df.to_csv(filepath)

@@ -1,12 +1,14 @@
 {
-
     "question": {
-        "input_variables": ["document_chunk", "number_of_questions"],
-        "partial_variables": {
-            "format_instructions": "The output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"$defs\": {\"Question\": {\"properties\": {\"question\": {\"title\": \"Question\", \"type\": \"string\"}}, \"required\": [\"question\"], \"title\": \"Question\", \"type\": \"object\"}}, \"properties\": {\"question_list\": {\"items\": {\"$ref\": \"#/$defs/Question\"}, \"title\": \"Question List\", \"type\": \"array\"}}, \"required\": [\"question_list\"]}\n```"
-        },
-        "template": "You are given a JSON encoded chunk of a Document:\n{document_chunk}.\n\n\n You are an expert of this document and you are formulating questions from the document to assess the knowledge of a student about content given in this document. \nPlease formulate {number_of_questions} questions to assess knowledge of the document given. The questions list should contain specific questions instead of the general questions, like 'What is the key information in the given document?'.\n\n{format_instructions}"
+      "input_variables": ["document_chunk", "number_of_questions"],
+      "partial_variables": {
+        "format_instructions": "The output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"$defs\": {\"Question\": {\"properties\": {\"question\": {\"title\": \"Question\", \"type\": \"string\"}}, \"required\": [\"question\"], \"title\": \"Question\", \"type\": \"object\"}}, \"properties\": {\"question_list\": {\"items\": {\"$ref\": \"#/$defs/Question\"}, \"title\": \"Question List\", \"type\": \"array\"}}, \"required\": [\"question_list\"]}\n```"
+      },
+      "template": "You are given a JSON encoded chunk of a Document:\n{document_chunk}.\n\n\n You are an expert of this document and you are formulating questions from the document to assess the knowledge of a student about content given in this document. \nPlease formulate {number_of_questions} questions to assess knowledge of the document given. The questions list should contain specific questions instead of the general questions, like 'What is the key information in the given document?'.\n\n{format_instructions}"
     },
-    "answer": {}
-} 
+    "answer": {
+      "input_variables": ["question", "rag_context"],
+      "template": "Answer using the information in the given retrieved context from the vector database for the following question: \n{question}. \n\nPlease give specific answer instead of the general answer, like 'The key information in the given context is...'. Please generate the answer using as much information as possible. If you are unable to answer it, please generate the answer as 'I don't know.' The answer should be informative and should be more than 3 sentences. Retrieved context from Vector Database:\n{rag_context}"
+    }
+}
   

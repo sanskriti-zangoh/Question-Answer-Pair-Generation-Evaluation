@@ -1,0 +1,14 @@
+{
+    "question": {
+      "input_variables": ["document_chunk", "number_of_questions"],
+      "partial_variables": {
+        "format_instructions": "The output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"$defs\": {\"Question\": {\"properties\": {\"question\": {\"title\": \"Question\", \"type\": \"string\"}}, \"required\": [\"question\"], \"title\": \"Question\", \"type\": \"object\"}}, \"properties\": {\"question_list\": {\"items\": {\"$ref\": \"#/$defs/Question\"}, \"title\": \"Question List\", \"type\": \"array\"}}, \"required\": [\"question_list\"]}\n```"
+      },
+      "template": "You are given a JSON encoded chunk of a Document:\n{document_chunk}.\n\nYou are an expert in this document and your task is to formulate questions to assess the knowledge of a student about the content given in this document. Please formulate {number_of_questions} specific questions to assess the knowledge of the document. The questions should focus on detailed aspects and specific points in the document, rather than general or broad topics.\n\n{format_instructions}"
+    },
+    "answer": {
+      "input_variables": ["question", "rag_context"],
+      "template": "Answer using the information in the given retrieved context from the vector database for the following question: \n{question}. \n\nPlease provide a specific and detailed answer using the information from the retrieved context. The answer should include as much relevant information as possible. If you are unable to answer it, state 'I don't know.' The answer should be informative and contain more than three sentences. Retrieved context from Vector Database:\n{rag_context}"
+    }
+  }
+  
