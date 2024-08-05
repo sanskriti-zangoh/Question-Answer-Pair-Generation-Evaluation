@@ -2,7 +2,7 @@ from depends.model import llm_anton_llama2, llm_anton_local_llama3
 from depends.vectordb import create_collection_from_documents, delete_collection
 from depends.document_loader import load_web, load_text, load_pdf, format_docs
 from depends.normal_chains import get_chain_1
-from depends.prompt import get_ans_prompt_parser_from_question
+from depends.prompt import get_ans_prompt_parser_from_question_simple
 from depends.chunking import get_text_splitter
 from depends.others import save_to_json_file, yield_from_ques_json, yield_from_ques_json_one
 from langchain_core.output_parsers import JsonOutputParser, ListOutputParser, StrOutputParser
@@ -22,7 +22,7 @@ docs = text_splitter.split_documents(documents)
 print("STATUS: document splitting done")
 print("N_CHUNKS:", len(docs))
 
-prompt, parser = get_ans_prompt_parser_from_question()
+prompt, parser = get_ans_prompt_parser_from_question_simple()
 print("STATUS: prompt and parser received")
 
 embeddings = OllamaEmbeddings(base_url=os.getenv('EMBEDDING_BASE_URL'), model="llama3") 
