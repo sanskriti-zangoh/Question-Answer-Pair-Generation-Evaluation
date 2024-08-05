@@ -5,7 +5,7 @@ from evaluation.weights import weights
 from evaluation.normalize import normalize_dataframe
 
 # Read the CSV file
-data = pd.read_csv('src/result/test22/qna_overall.csv')
+data = pd.read_csv('src/result/test23/qna_overall.csv')
 
 # Ensure metric_fields keys match weights keys after normalization
 metric_fields = [key for key in weights]
@@ -30,4 +30,4 @@ data["overall"] = np.average(normalized_df[normalized_fields], axis=1, weights=n
 data["overall"] = data["overall"].fillna(data["overall"].mean())
 
 # Save the updated data to CSV
-data.to_csv('src/result/test22/qna_overall.csv', index=False)
+data.to_csv('src/result/test23/qna_overall.csv', index=False)
