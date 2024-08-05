@@ -36,7 +36,7 @@ print("STATUS: llm chain created")
 response_dict = {"answer": [], "answer_context": [], "answer_embeddings": [], "answer_context_embeddings": []}
 
 import pandas as pd
-data = pd.read_csv('src/result/test18/qna_overall.csv')
+data = pd.read_csv('src/result/test21/qna_overall.csv')
 
 for index in range(len(data)):
     print(f"STATUS: processing document {index+1} out of {len(data)}")
@@ -89,4 +89,4 @@ data["answer"] = response_dict["answer"]
 data["answer_embeddings"] = response_dict["answer_embeddings"]
 data["answer_context"] = response_dict["answer_context"]
 data["answer_context_embeddings"] = response_dict["answer_context_embeddings"]
-data.to_csv('src/result/test18/qna_overall.csv', index=False)
+data.to_csv('src/result/test21/qna_overall.csv', index=False)

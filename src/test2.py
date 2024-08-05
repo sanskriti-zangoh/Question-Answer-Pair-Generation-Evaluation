@@ -1,13 +1,13 @@
-from depends.model import llm_anton_local_llama3
+import numpy as np
+import pandas as pd
 
-chat_completion = llm_anton_local_llama3.chat.completions.create(
-    messages=[
-        {
-            "role": "user",
-            "content": "What is a contract farming? Explain in detail",
-        }
-    ],
-    model="llama3",
-)
+# Read the CSV file
+data = pd.read_csv('src/result/test21/qna_overall.csv')
+print(list(data["overall"]))
+print(np.mean(list(data["overall"])))
+print(len(data))
 
-print(chat_completion.choices[0].message.content)
+data = pd.read_csv('src/result/test20/qna_overall.csv')
+print(list(data["overall"]))
+print(np.mean(list(data["overall"])))
+print(len(data))

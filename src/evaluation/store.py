@@ -4,6 +4,8 @@ from typing import List
 from langchain_core.documents import Document
 from langchain_ollama import OllamaEmbeddings
 import pandas as pd
+import re
+import numpy as np
 
 embeddings = OllamaEmbeddings(model="llama3")
 
@@ -25,6 +27,26 @@ def save_embeddings(dir: str = "result/test9", filename: str = 'qna_context.json
         df['answer_context_embeddings'] = df['answer_context'].apply(lambda x: embeddings.embed_query(x))
 
     df.to_csv(os.path.join(dir, csv_filename), index=False)
+
+def preprocess_embeddings(embedding_str):
+    # Debug print to see the original string
+    print(f"Original: {embedding_str[:100]}...")
+
+    # Ensure proper formatting
+    embedding_str = embedding_str.strip()  # Remove leading/trailing whitespace
+    embedding_str = re.sub(r'\s*\[\s*', '[', embedding_str)  # Remove spaces around '['
+    embedding_str = re.sub(r'\s*\]\s*', ']', embedding_str)  # Remove spaces around ']'
+    embedding_str = re.sub(r'\s+', ', ', embedding_str)  # Replace multiple spaces/newlines with a comma followed by a single space
+    embedding_str = re.sub(r',\s*', ', ', embedding_str)  # Ensure consistent spacing around commas
+
+    # Debug print to see the cleaned string
+    print(f"Cleaned: {embedding_str[:100]}...")
+
+    return embedding_str
+def parse_array(array_str):
+    # Remove any unwanted characters (such as quotes) and convert to list
+    array_str = array_str.strip('[]')
+    return np.array([float(x) for x in array_str.split(',')])
 
 
 

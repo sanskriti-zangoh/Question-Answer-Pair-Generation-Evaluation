@@ -68,4 +68,4 @@ for i, doc in enumerate(docs):
         except (KeyError, OutputParserException, TypeError) as e:
             print(f"ERROR: {e}. Retrying...")
 
-list_of_dict_to_df_save(data=response_list, dir="src/result/test19", filename="qna_overall.csv")
+list_of_dict_to_df_save(data=response_list, dir="src/result/test20", filename="qna_overall.csv")

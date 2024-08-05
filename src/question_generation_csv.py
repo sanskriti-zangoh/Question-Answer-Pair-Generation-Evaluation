@@ -69,4 +69,4 @@ for i, doc in enumerate(docs):
             print(f"ERROR: {e}. Retrying...")
 
 
-list_of_dict_to_df_save(data=response_list, dir="src/result/test18", filename="qna_overall.csv")
+list_of_dict_to_df_save(data=response_list, dir="src/result/test21", filename="qna_overall.csv")
