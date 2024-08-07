@@ -1,4 +1,5 @@
-from depends.prompt import get_qna_prompt_parser_from_chunks, get_qna_prompt_parser_from_chunks2, get_qna_prompt_parser_from_chunks3, get_que_prompt_parser_from_chunks
+from depends.prompt import get_qna_prompt_parser_from_chunks, get_qna_prompt_parser_from_chunks2, get_qna_prompt_parser_from_chunks3, get_que_prompt_parser_from_chunks, get_ans_prompt_parser_from_question2, get_que_prompt_parser_from_chunks_one, get_qna_prompt_parser_from_chunks_one
+from evaluation.prompt import get_ans_criteria_evaluation_prompt_parser, get_qna_criteria_evaluation_prompt_parser, get_que_criteria_evaluation_prompt_parser
 
-prompt, parser = get_que_prompt_parser_from_chunks()
+prompt, parser = get_qna_prompt_parser_from_chunks_one()
 print(prompt)

@@ -5,7 +5,7 @@ from evaluation.weights import weights
 from evaluation.normalize import normalize_dataframe
 
 # Read the CSV file
-data = pd.read_csv('src/result/test23/qna_overall.csv')
+data = pd.read_csv('src/result/test20/qna_overall.csv')
 
 # Ensure metric_fields keys match weights keys after normalization
 metric_fields = [key for key in weights]
@@ -26,8 +26,8 @@ weights_normalized = {key if key in metric_field_already_normalized else f'{key}
 # Calculate the overall score
 data["overall"] = np.average(normalized_df[normalized_fields], axis=1, weights=np.array(list(weights_normalized.values())))
 
-# replace nan by mean
-data["overall"] = data["overall"].fillna(data["overall"].mean())
+# Replace NaNs with the mean of the overall scores
+data["overall"].fillna(data["overall"].mean(), inplace=True)
 
 # Save the updated data to CSV
-data.to_csv('src/result/test23/qna_overall.csv', index=False)
+data.to_csv('src/result/test20/qna_overall.csv', index=False)

@@ -1,0 +1,7 @@
+{
+  "input_variables": ["document_chunk"],
+  "partial_variables": {
+    "format_instructions": "The output should be formatted as a JSON instance that conforms to the JSON schema below.\n\nAs an example, for the schema {\"properties\": {\"foo\": {\"title\": \"Foo\", \"description\": \"a list of strings\", \"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"foo\"]}\nthe object {\"foo\": [\"bar\", \"baz\"]} is a well-formatted instance of the schema. The object {\"properties\": {\"foo\": [\"bar\", \"baz\"]}} is not well-formatted.\n\nHere is the output schema:\n```\n{\"properties\": {\"question\": {\"title\": \"Question\", \"type\": \"string\"}, \"answer\": {\"title\": \"Answer\", \"type\": \"string\"}}, \"required\": [\"question\", \"answer\"]}\n```"
+  },
+  "template": "Please generate a question asking for the key information in the given JSON encoded paragraph:\n{document_chunk}\n\n\n\n    Also answer the question using the information in the given paragraph.\n    Please ask the specific question instead of the general question, like\n    'What is the key information in the given paragraph?'.\n    Also avoid mentioning the 'paragraph' in the question or the answer. Instead use the information in the given paragraph.\n    Please generate the respective answers using as much information as possible.\n    If you are unable to answer any question, please generate the answer as 'I don't know.'\n    The answers should be informative and should be more than 3 sentences.\n    {format_instructions}"
+}

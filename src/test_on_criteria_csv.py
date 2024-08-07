@@ -34,7 +34,7 @@ response_dict = {
 }
 
 import pandas as pd
-data = pd.read_csv('src/result/test23/qna_overall.csv')
+data = pd.read_csv('src/result/test20/qna_overall.csv')
 for index in range(len(data)):
     for criteria_name in answer_criteria:
         prompt, parser = get_ans_criteria_evaluation_prompt_parser(criteria_name)
@@ -170,7 +170,7 @@ for index in range(len(data)):
 
 for key, value in response_dict.items():
     data[key] = value
-data.to_csv('src/result/test23/qna_overall.csv', index=False)
+data.to_csv('src/result/test20/qna_overall.csv', index=False)
 
 
 
