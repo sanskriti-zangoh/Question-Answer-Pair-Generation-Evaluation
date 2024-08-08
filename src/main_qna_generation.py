@@ -1,5 +1,5 @@
 import argparse
-from depends.model import llm_anton_local_llama3, llm_anton_llama2, llm_anton_llama3, llm_gemini, llm_llama3
+from depends.model import llm_anton_local_llama3, llm_anton_llama2, llm_anton_llama3, llm_gemini, llm_llama3, llm_anton_llama3_1
 from depends.document_loader import load_web, load_text, load_pdf, format_docs, load_json
 from answer_generation_csv2_func import answer_generation_csv2_func
 from generic_question_generation_csv_func import generate_question_generation_csv_func
@@ -15,7 +15,7 @@ RESULT_PATH = "/Users/sanskrirtisingh/Documents/GitHub/Question-Answer-Pair-Gene
 
 LLM_DICT = {
     "llm_anton_llama2": llm_anton_llama2,
-    "llm_anton_llama3.1": llm_anton_llama3,
+    "llm_anton_llama3.1": llm_anton_llama3_1,
     "llm_anton_local_llama3": llm_anton_local_llama3,
     "llm_gemini": llm_gemini,
     "llm_llama3": llm_llama3

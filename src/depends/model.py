@@ -30,8 +30,9 @@ llm_anton_local_llama3 = OpenAIClient(
 )
 
 llm_anton_llama3_1 = OpenAIClient(
-    api_key=os.getenv("ANTON_MODEL_API_KEY"),
-    base_url=os.getenv("ANTON_OLLAMA3_URL"),
+    # api_key=os.getenv("ANTON_MODEL_API_KEY"),
+    api_key="ollama",
+    base_url=os.getenv("ANTON_LOCAL_OLLAMA3_URL"),
 )
 
 # llm_anton_local_llama3 = OpenAI(
