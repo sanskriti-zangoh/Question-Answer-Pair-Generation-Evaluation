@@ -15,7 +15,7 @@ llm_gemini = ChatGoogleGenerativeAI(model="gemini-pro", api_key=os.getenv("GOOGL
 llm_anton_llama3 = OpenAI(
     api_key=os.getenv("ANTON_MODEL_API_KEY"),
     base_url=os.getenv("ANTON_OLLAMA3_URL"),
-    model="/mnt/data/users/khushi/mansion/vllm_deployment/meta-llama-3-8B-awq",
+    model="meta-llama/Meta-Llama-3.1-8B-Instruct",
 )
 
 llm_anton_llama2 = OpenAI(
@@ -27,6 +27,11 @@ llm_anton_llama2 = OpenAI(
 llm_anton_local_llama3 = OpenAIClient(
     api_key="ollama",
     base_url=os.getenv("ANTON_LOCAL_OLLAMA3_URL"),
+)
+
+llm_anton_llama3_1 = OpenAIClient(
+    api_key=os.getenv("ANTON_MODEL_API_KEY"),
+    base_url=os.getenv("ANTON_OLLAMA3_URL"),
 )
 
 # llm_anton_local_llama3 = OpenAI(

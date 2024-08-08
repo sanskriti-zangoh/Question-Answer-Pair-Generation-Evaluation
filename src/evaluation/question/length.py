@@ -3,6 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import json
 import os
+from logging import Logger
+from typing import Optional
 
 
 def get_question_length_histogram(dir: str = "result/test5", filename: str = 'qna_context_embeddings.csv', plot_filename: str = 'que_length_histogram.png'):
@@ -24,7 +26,7 @@ def get_question_length_histogram(dir: str = "result/test5", filename: str = 'qn
     plt.savefig(os.path.join(dir, plot_filename))
     plt.show()
 
-def get_question_length_histogram_csv(dir: str = "result/test5", filename: str = 'qna_overall.csv', plot_filename: str = 'que_length_histogram.png'):
+def get_question_length_histogram_csv(dir: str = "result/test5", filename: str = 'qna_overall.csv', plot_filename: str = 'que_length_histogram.png', logger: Optional[Logger] = None):
 
     # Load to pandas Datafram
     df = pd.read_csv(os.path.join(dir, filename))
@@ -41,4 +43,6 @@ def get_question_length_histogram_csv(dir: str = "result/test5", filename: str =
     plt.xlabel("Question Length")
     plt.ylabel("Frequency")
     plt.savefig(os.path.join(dir, plot_filename))
-    plt.show()
+    plt.close()
+    if logger:
+        logger.info("Histogram of Question Lengths saved to {}".format(os.path.join(dir, plot_filename)))

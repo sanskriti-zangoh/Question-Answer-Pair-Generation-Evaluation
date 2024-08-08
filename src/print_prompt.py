@@ -2,4 +2,4 @@ from depends.prompt import get_qna_prompt_parser_from_chunks, get_qna_prompt_par
 from evaluation.prompt import get_ans_criteria_evaluation_prompt_parser, get_qna_criteria_evaluation_prompt_parser, get_que_criteria_evaluation_prompt_parser
 
 prompt, parser = get_qna_prompt_parser_from_chunks_one()
-print(prompt)
+print(prompt.__dict__)

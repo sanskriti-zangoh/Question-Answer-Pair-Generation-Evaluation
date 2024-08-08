@@ -34,7 +34,7 @@ def get_que_prompt_parser_from_chunks_one() -> Tuple[PromptTemplate, JsonOutputP
     'What is the key information in the given paragraph?'. 
     Also avoid mentioning the 'paragraph' in the question. Instead use the information in the given paragraph.
     {format_instructions}""",
-        input_variables=["document_chunk", "number_of_questions"],
+        input_variables=["document_chunk"],
         partial_variables={"format_instructions": parser.get_format_instructions()},
     )
     return prompt, parser
@@ -99,7 +99,6 @@ def get_qna_prompt_parser_from_chunks_one() -> Tuple[PromptTemplate, JsonOutputP
         template="""Please generate a question asking for the key information in the given JSON encoded paragraph:\n{document_chunk}
 
 
-
     Also answer the question using the information in the given paragraph.
     Please ask the specific question instead of the general question, like
     'What is the key information in the given paragraph?'.
@@ -108,7 +107,7 @@ def get_qna_prompt_parser_from_chunks_one() -> Tuple[PromptTemplate, JsonOutputP
     If you are unable to answer any question, please generate the answer as 'I don't know.'
     The answers should be informative and should be more than 3 sentences.
     {format_instructions}""",
-        input_variables=["document_chunk", "number_of_questions"],
+        input_variables=["document_chunk"],
         partial_variables={"format_instructions": parser.get_format_instructions()},
     )
     return prompt, parser
@@ -153,13 +152,12 @@ def get_ans_prompt_parser_from_question2() -> Tuple[PromptTemplate, JsonOutputPa
         template="""You are given JSON encoded paragraph:\n{rag_context}
 
 
-
-    Answer the question using the information in the given paragraph.
+    Answer the following question using the information in the given paragraph.
 
     question: {question}
 
     Please be specific instead of the generic, like
-    'According to the information provided in the paragraph'.
+    'According to the information provided in the paragraph ... '.
     Also avoid mentioning the 'paragraph' in the answer. Instead use the information in the given paragraph.
     Please generate the answer using as much information as possible.
     If you are unable to answer the question, the answer will be 'I don't know.'

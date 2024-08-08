@@ -1,0 +1,1 @@
+python main_qna_evaluation.py --dir "src/result/test20" --filename "qna_overall.csv"

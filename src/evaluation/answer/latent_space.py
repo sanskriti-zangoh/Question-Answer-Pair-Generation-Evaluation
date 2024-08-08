@@ -7,8 +7,10 @@ from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 import numpy as np
 import seaborn as sns
+from logging import Logger
+from typing import Optional
 
-def get_answer_latent_space_csv(dir: str = "result/test5", filename: str = 'qna_overall.csv', plot_filename: str = 'ans_latent_space_plot.png'):
+def get_answer_latent_space_csv(dir: str = "result/test5", filename: str = 'qna_overall.csv', plot_filename: str = 'ans_latent_space_plot.png', logger: Optional[Logger] = None):
     # Load the data from the JSON file
     df = pd.read_csv(os.path.join(dir, filename))
     question_embeddings = df['question_embeddings'].apply(lambda x: np.fromstring(x.strip('[]'), sep=',')).values.tolist()
@@ -38,3 +40,6 @@ def get_answer_latent_space_csv(dir: str = "result/test5", filename: str = 'qna_
     # Save the plot
     plt.savefig(os.path.join(dir, plot_filename))
     plt.close()
+
+    if logger:
+        logger.info("Latent space plot saved to {}".format(os.path.join(dir, plot_filename)))

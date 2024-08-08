@@ -3,6 +3,7 @@ from pymilvus import Milvus as PyMilvus
 from langchain_ollama.embeddings import OllamaEmbeddings
 from typing import List, Any, Optional, Dict
 from langchain_core.documents import Document
+from logging import Logger
 
 embeddings = OllamaEmbeddings(model="llama3")
 
@@ -21,9 +22,11 @@ def get_collection(collection_name: str) -> Milvus:
         connection_args={"host": "192.168.50.71", "port": "19532"},
     )
 
-def create_collection_from_documents(documents: List[Document], collection_name: str) -> Milvus:
+def create_collection_from_documents(documents: List[Document], collection_name: str, logger: Optional[Logger] = None) -> Milvus:
     if collection_exists(collection_name):
         print(f"Collection '{collection_name}' already exists.")
+        if logger:
+            logger.info(f"Collection '{collection_name}' already exists.")
         return get_collection(collection_name)
     else:
         return Milvus.from_documents(
